@@ -1,0 +1,219 @@
+input {
+    border: none;
+    outline: none;
+    color: #505050;
+}
+input [disabled] {
+    color: #ccc;
+    background-color: unset;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.form-group .row {
+    display: flex;
+    flex-direction: row;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    row-gap: 10px;
+}
+.form-group > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-color: #0095ff;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-top: 10px;
+    transition: all 150ms ease-in;
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+}
+.form-group > button:hover {
+    background-color: #fff;
+    color: #0095ff;
+    border-color: #0095ff;
+}
+.form-group > button:disabled {
+    background-color: #ccc;
+    color: #505050;
+    border-color: #ccc;
+    cursor: not-allowed;
+}
+.form-input {
+    position: relative;
+    min-width: 250px;
+    width: 100%;
+    height: 60px;
+}
+.form-input > fieldset {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+    -webkit-margin-after: 0px;
+            margin-block-end: 0px;
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+    -webkit-padding-start: 10px;
+            padding-inline-start: 10px;
+    -webkit-padding-end: 50px;
+            padding-inline-end: 50px;
+    -webkit-padding-after: 0px;
+            padding-block-end: 0px;
+    -webkit-padding-before: 0px;
+            padding-block-start: 0px;
+}
+.form-input > fieldset > legend {
+    -webkit-padding-start: 0px;
+            padding-inline-start: 0px;
+    -webkit-padding-end: 0px;
+            padding-inline-end: 0px;
+}
+.form-input > input, 
+.form-input > textarea,
+.form-input label {
+    position: absolute;
+}
+.form-input > input,
+.form-input > textarea {
+    left: 0px;
+    top: 16px;
+    height: 40px;
+    width: calc(100% - 50px);
+    margin-left: 15px;
+    z-index: 1;
+}
+.form-input > textarea {
+    resize: none;
+    border: none;
+    outline: none;
+}
+.form-input > label {
+    left: 10px;
+    top: 27px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #949494 b3;
+    padding: 0px 5px;
+    -ms-user-select: none;
+        user-select: none;
+    z-index: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    transition: all 150ms ease-in;
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+}
+.form-input button {
+    position: absolute;
+    right: 9px;
+    top: calc(100% - 18px);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.form-input .container-select {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+}
+.form-input .container-select .select {
+    position: absolute;
+    background-color: #fff;
+    font-size: 14px;
+    color: #000 ab;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    max-height: 350px;
+    overflow-y: auto;
+}
+.form-input .container-select .select ::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+}
+.form-input .container-select .select ::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+.form-input .container-select .select .select-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    -ms-user-select: none;
+        user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.form-input .container-select .select .select-item:hover {
+    background-color: #ccc;
+}
+.form-input .container-select.select-open {
+    z-index: 2;
+    opacity: 1;
+    pointer-events: all;
+}
+.form-input.input-select > input {
+    cursor: pointer;
+    -ms-user-select: none;
+        user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+.form-input > input:focus + label,
+.form-input > textarea:focus + label {
+    top: 2px;
+    color: #0095ff !important;
+}
+.form-input > input:not(:-moz-placeholder-shown) + label, .form-input > textarea:not(:-moz-placeholder-shown) + label {
+    top: 2px;
+}
+.form-input > input:not(:-ms-input-placeholder) + label, .form-input > textarea:not(:-ms-input-placeholder) + label {
+    top: 2px;
+}
+.form-input > input:not(:placeholder-shown) + label,
+.form-input > textarea:not(:placeholder-shown) + label {
+    top: 2px;
+}
+.form-input > input:focus ~ fieldset,
+.form-input > textarea:focus ~ fieldset {
+    border-color: #0095ff;
+}
+.form-input.cl {
+    width: 100%;
+}
+.form-input.cl-8 {
+    width: 80%;
+}
+.form-input.cl-6 {
+    width: 60%;
+}
+.form-input.cl-4 {
+    width: 40%;
+}
+.form-input.cl-2 {
+    width: 20%;
+}
+.form-input.input-textarea {
+    height: 150px;
+}
+.form-input.input-textarea > textarea {
+    height: calc(100% - 20px);
+    padding: 5px 0px;
+}
